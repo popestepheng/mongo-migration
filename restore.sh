@@ -5,6 +5,11 @@ if [ ! -d /backup/dump/$MONGODB_SRC_DB ]; then
     exit 1;
 fi
 
+if [ -z "$MONGODB_COLLECTIONS" ];
+then
+    ./cleanup.sh
+fi
+
 RESTORE_CMD="mongorestore --host $MONGODB_DEST_HOST --db $MONGODB_DEST_DB --drop "
 
 if [ ! -z "$MONGODB_DEST_PORT" ];
