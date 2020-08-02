@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BACKUP_CMD="mongodump --host $MONGODB_SRC_HOST --db $MONGODB_SRC_DB --out /backup/dump ";
+BACKUP_CMD="mongodump --forceTableScan --host $MONGODB_SRC_HOST --db $MONGODB_SRC_DB --out /backup/dump ";
 
 
 if [ ! -z "$MONGODB_SRC_PORT" ];
